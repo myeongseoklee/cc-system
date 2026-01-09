@@ -1,0 +1,27 @@
+{
+  "domainName": "{{domainName}}",
+  "createdAt": "{{ISO8601}}",
+  "testFilePath": "src/pages/api/{{domainName}}/__tests__/index.api.test.ts",
+  "apiEndpoints": [
+    {
+      "method": "{{HTTP_METHOD}}",
+      "path": "/api/{{domainName}}",
+      "v1Function": "{{v1FunctionName}}",
+      "testCases": [
+        {
+          "describe": "{{HTTP_METHOD}} /api/{{domainName}}",
+          "test": "{{testName}}",
+          "type": "success" | "validation_failure" | "business_failure" | "edge",
+          "mockSPs": ["{{spName}}"]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "totalEndpoints": 0,
+    "totalTestCases": 0,
+    "successCases": 0,
+    "failureCases": 0,
+    "edgeCases": 0
+  }
+}

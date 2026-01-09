@@ -1,0 +1,159 @@
+{
+  "domainName": "{{domainName}}",
+  "analyzedAt": "{{ISO8601_timestamp}}",
+  "v1BasePath": "{{v1BasePath}}",
+
+  "apiEndpoints": [
+    {
+      "path": "/api/{{apiPath}}",
+      "file": "src/pages/api/{{apiPath}}/index.ts",
+      "methods": {
+        "get": {
+          "handler": "{{domainName}}.service.{{serviceFunctionName}}",
+          "auth": {
+            "roles": ["{{ROLE_TYPE}}"],
+            "authorities": ["{{AUTHORITY}}"]
+          }
+        },
+        "post": { "handler": "{{domainName}}.service.{{serviceFunctionName}}" },
+        "put": { "handler": "{{domainName}}.service.{{serviceFunctionName}}" },
+        "delete": { "handler": "{{domainName}}.service.{{serviceFunctionName}}" }
+      },
+      "validation": "{{ValidationSchema}}.{{METHOD}}"
+    }
+  ],
+
+  "files": {
+    "service": {
+      "path": "{{servicePath}}",
+      "functions": [
+        {
+          "name": "{{functionName}}",
+          "lineNumber": 0,
+          "signature": "{{signature}}",
+
+          "parameters": [
+            {
+              "name": "{{paramName}}",
+              "type": "{{paramType}}",
+              "source": "req.query" | "req.body" | "req.params" | "direct"
+            }
+          ],
+
+          "returnType": "{{returnType}}",
+
+          "businessLogic": [
+            {
+              "type": "validation" | "transformation" | "filtering" | "aggregation",
+              "description": "{{description}}",
+              "code": "{{code_snippet}}"
+            }
+          ],
+
+          "antiPatterns": [
+            {
+              "type": "reqResAccess" | "memoryFiltering" | "directQuery" | "manualTransaction" | "repositoryBusinessLogic",
+              "description": "{{description}}",
+              "lineNumber": 0,
+              "severity": "warning" | "error" | "critical"
+            }
+          ],
+
+          "dependencies": {
+            "database": {
+              "sp": ["{{spName}}"],
+              "tables": ["{{tableName}}"],
+              "rawQueries": []
+            },
+            "domains": ["{{domainName}}"],
+            "external": []
+          },
+
+          "complexity": "LOW" | "MEDIUM" | "HIGH" | "CRITICAL",
+          "estimatedHours": 0,
+
+          "migrationNotes": [
+            "{{note}}"
+          ],
+
+          "references": {
+            "total": 0,
+            "byType": {
+              "import": 0,
+              "direct-call": 0,
+              "method-call": 0,
+              "callback": 0
+            },
+            "byCategory": {
+              "api": 0,
+              "service": 0,
+              "internal": 0,
+              "test": 0,
+              "database": 0
+            },
+            "list": [
+              {
+                "file": "{{filePath}}",
+                "line": 0,
+                "type": "import" | "direct-call" | "method-call" | "callback",
+                "category": "api" | "service" | "internal" | "test" | "database",
+                "context": "{{code_context}}"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+
+  "callGraph": {
+    "edges": [
+      {
+        "from": "{{fromFunction}}",
+        "to": "{{toFunction}}",
+        "type": "api-call" | "service-call" | "internal-call"
+      }
+    ]
+  },
+
+  "databaseDependencies": {
+    "functionsUsed": ["{{databaseFunctionName}}"],
+    "crossDomainUsage": {
+      "{{databaseFunctionName}}": {
+        "totalReferences": 0,
+        "currentDomain": 0,
+        "otherDomains": 0,
+        "domainList": ["{{domainName}}"],
+        "references": [
+          {
+            "domain": "{{domainName}}",
+            "file": "{{filePath}}",
+            "line": 0
+          }
+        ]
+      }
+    }
+  },
+
+  "summary": {
+    "totalFunctions": 0,
+    "antiPatternCount": {
+      "reqResAccess": 0,
+      "memoryFiltering": 0,
+      "directQuery": 0,
+      "manualTransaction": 0,
+      "repositoryBusinessLogic": 0
+    },
+    "complexity": {
+      "low": 0,
+      "medium": 0,
+      "high": 0,
+      "critical": 0
+    },
+    "estimatedMigrationHours": 0
+  },
+
+  "recommendations": [
+    "{{recommendation}}"
+  ]
+}
