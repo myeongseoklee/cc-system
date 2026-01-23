@@ -18,6 +18,27 @@
 
 ---
 
+## GRASP와 GoF의 관계
+
+| 구분 | GRASP | GoF |
+|------|-------|-----|
+| **목적** | "누구에게 책임을 할당할 것인가?" | "어떻게 구현할 것인가?" |
+| **성격** | 설계 원칙 (Why) | 구현 패턴 (How) |
+| **관계** | GRASP가 방향을 제시 | GoF가 구체적 해결책 제공 |
+
+**GRASP → GoF 매핑:**
+
+| GRASP 패턴 | GoF 패턴 | 관계 |
+|------------|----------|------|
+| Creator | [Factory Method](./creational.md#1-factory-method-패턴) | 생성 책임이 복잡해지면 Factory로 분리 |
+| Polymorphism | [Strategy](./behavioral.md#1-strategy-패턴-⭐), [State](./behavioral.md#5-state-패턴) | 다형성의 대표적 구현 |
+| Indirection | [Adapter](./structural.md#1-adapter-패턴), [Facade](./structural.md#3-facade-패턴) | 간접 참조의 구체적 형태 |
+| Protected Variations | [Decorator](./structural.md#2-decorator-패턴) | 변경 보호를 위한 확장 |
+
+> 📖 GRASP 상세: [GRASP 패턴](../grasp.md)
+
+---
+
 ## 패턴 분류
 
 | 분류 | 목적 | 핵심 패턴 | 문서 |

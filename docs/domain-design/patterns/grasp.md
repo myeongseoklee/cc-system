@@ -441,6 +441,7 @@ class OrderFactory {
 ### 관련 패턴
 
 - **Factory Pattern**: Creator의 복잡한 경우 대안
+  → [GoF Factory Method](./design-patterns/creational.md#1-factory-method-패턴)
 - **Low Coupling**: Factory 분리는 결합도를 낮춤
 - **Pure Fabrication**: Factory 자체가 순수 가공물
 
@@ -1448,6 +1449,8 @@ const greeting = "Hello";
 ### 관련 패턴
 
 - **Adapter, Facade, Proxy**: 간접 참조의 구체적 형태
+  → [GoF Adapter](./design-patterns/structural.md#1-adapter-패턴)
+  → [GoF Facade](./design-patterns/structural.md#3-facade-패턴)
 - **Low Coupling**: 간접 참조의 목적
 - **Protected Variations**: 변경 보호를 위한 간접 참조
 
@@ -1653,6 +1656,9 @@ class Sunday implements Day { isWeekend() { return true; } }
 ### 관련 패턴
 
 - **Strategy Pattern**: 다형성의 대표적 구현
+  → [GoF Strategy](./design-patterns/behavioral.md#1-strategy-패턴-⭐)
+- **State Pattern**: 상태에 따른 행동 변경
+  → [GoF State](./design-patterns/behavioral.md#5-state-패턴)
 - **OCP (SOLID)**: 다형성으로 OCP 달성
 - **Protected Variations**: 다형성으로 변경 보호
 

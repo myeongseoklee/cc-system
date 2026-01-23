@@ -35,7 +35,8 @@ Phase 1: 분석     Phase 2: 설계     Phase 3: 구현     Phase 4: 테스트  
 | 협력, 책임, 역할 | 협력이 먼저, 메시지가 객체를 선택 | [OOP 핵심](./principles/oop-fundamentals.md) |
 | Tell, Don't Ask | 객체에게 묻지 말고 시켜라 | [OOP 핵심](./principles/oop-fundamentals.md) |
 | SOLID | 단일책임, 개방폐쇄, 리스코프, 인터페이스분리, 의존성역전 | [SOLID](./principles/solid.md) |
-| GRASP | 정보전문가, 창조자, 낮은결합, 높은응집, 다형성 | [GRASP](./principles/grasp-patterns.md) |
+| GRASP | 정보전문가, 창조자, 낮은결합, 높은응집, 다형성 | [GRASP](./patterns/grasp.md) |
+| **GoF 패턴** | Factory, Strategy, State, Adapter, Decorator 등 | [GoF 디자인 패턴](./patterns/design-patterns/index.md) |
 
 ### 자주 묻는 질문
 
@@ -99,10 +100,17 @@ docs/domain-design/
 │   ├── 04-test-refactor/              # Phase 4: 테스트 & 리팩토링
 │   └── 05-verification/               # Phase 5: 검증
 │
+├── patterns/                          # 설계 패턴
+│   ├── grasp.md                       # GRASP 패턴 (책임 할당)
+│   └── design-patterns/               # GoF 디자인 패턴
+│       ├── index.md                   # 패턴 개요 및 선택 가이드
+│       ├── behavioral.md              # 행위 패턴 (Strategy, State...)
+│       ├── creational.md              # 생성 패턴 (Factory, Builder...)
+│       └── structural.md              # 구조 패턴 (Adapter, Decorator...)
+│
 └── principles/                        # 핵심 원칙 (레퍼런스용)
     ├── oop-fundamentals.md            # 객체지향 핵심
-    ├── solid.md                       # SOLID 원칙
-    └── grasp-patterns.md              # GRASP 패턴
+    └── solid.md                       # SOLID 원칙
 ```
 
 ---

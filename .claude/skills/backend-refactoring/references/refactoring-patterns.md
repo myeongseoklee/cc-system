@@ -216,6 +216,24 @@ function processPayment(payment) {
 }
 ```
 
+---
+
+## 리팩토링과 디자인 패턴
+
+리팩토링 과정에서 특정 **코드 냄새**를 발견하면 적절한 **GoF 패턴**으로 해결할 수 있습니다.
+
+| 코드 냄새 | 리팩토링 기법 | 적용 패턴 | 참조 |
+|----------|-------------|----------|------|
+| 조건문 체인 (switch/if-else) | 다형성으로 조건문 대체 | Strategy, State | [Strategy](../../../docs/domain-design/patterns/design-patterns/behavioral.md#1-strategy-패턴-⭐) |
+| 복잡한 생성 로직 | Factory로 추출 | Factory Method, Builder | [Factory](../../../docs/domain-design/patterns/design-patterns/creational.md#1-factory-method-패턴) |
+| 메시지 체인 (기차 충돌) | 중개자 숨기기 | Facade | [Facade](../../../docs/domain-design/patterns/design-patterns/structural.md#3-facade-패턴) |
+| 기능 추가 시 클래스 폭발 | 상속 → 합성 | Decorator | [Decorator](../../../docs/domain-design/patterns/design-patterns/structural.md#2-decorator-패턴) |
+| 호환되지 않는 인터페이스 | 어댑터로 변환 | Adapter | [Adapter](../../../docs/domain-design/patterns/design-patterns/structural.md#1-adapter-패턴) |
+
+**상세:** [GoF 패턴 가이드](../../../docs/domain-design/patterns/design-patterns/index.md)
+
+---
+
 ## 체크리스트
 
 ### 리팩토링 전

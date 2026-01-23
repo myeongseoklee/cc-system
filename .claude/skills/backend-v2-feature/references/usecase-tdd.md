@@ -67,3 +67,48 @@ export class SelectEntityListUseCase {
 ### Assert
 - 결과 검증
 - 구체적 값 하드코딩 (계산식 재사용 금지)
+
+---
+
+## UseCase 내 디자인 패턴
+
+### 정책/알고리즘이 여러 가지일 때: Strategy 패턴
+
+```typescript
+// 할인 정책, 결제 방식, 검증 규칙 등
+interface DiscountPolicy {
+  applyDiscount(amount: Money): Money;
+}
+
+class PercentDiscountPolicy implements DiscountPolicy { ... }
+class AmountDiscountPolicy implements DiscountPolicy { ... }
+
+// UseCase에서 사용
+class CreateOrderUseCase {
+  constructor(private discountPolicy: DiscountPolicy) {}
+
+  async exec(query: Query): Promise<Order> {
+    const subtotal = this.calculateSubtotal(query);
+    const total = this.discountPolicy.applyDiscount(subtotal);
+    // ...
+  }
+}
+```
+
+→ [Strategy 패턴 상세](../../../docs/domain-design/patterns/design-patterns/behavioral.md#1-strategy-패턴-⭐)
+
+### 복잡한 객체 생성: Factory/Builder 패턴
+
+```typescript
+// DTO, 복잡한 Entity 생성
+class OrderFactory {
+  static create(rawData: RawData): Order {
+    const items = rawData.items.map(item => new OrderItem(item));
+    const discountPolicy = this.selectDiscountPolicy(rawData);
+    return new Order({ items, discountPolicy });
+  }
+}
+```
+
+→ [Factory 패턴 상세](../../../docs/domain-design/patterns/design-patterns/creational.md#1-factory-method-패턴)
+→ [Builder 패턴 상세](../../../docs/domain-design/patterns/design-patterns/creational.md#3-builder-패턴)

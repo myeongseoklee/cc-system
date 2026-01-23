@@ -104,6 +104,20 @@ const total = order.getSubtotal() - order.getDiscount();
 const total = order.calculateTotal();
 ```
 
+### 2-4. 디자인 패턴 선택 및 적용
+
+GRASP로 책임을 할당한 후, 구체적 구현에서 디자인 패턴을 선택합니다.
+
+**패턴 선택 가이드:** [GoF 디자인 패턴](../../docs/domain-design/patterns/design-patterns/index.md)
+
+| 문제 상황 | 해결 패턴 | 참조 |
+|----------|----------|------|
+| 알고리즘을 런타임에 교체해야 함 | Strategy | [behavioral.md](../../docs/domain-design/patterns/design-patterns/behavioral.md#1-strategy-패턴-⭐) |
+| 객체 생성 로직이 복잡함 | Factory Method | [creational.md](../../docs/domain-design/patterns/design-patterns/creational.md#1-factory-method-패턴) |
+| 상태에 따라 객체 행동이 변함 | State | [behavioral.md](../../docs/domain-design/patterns/design-patterns/behavioral.md#5-state-패턴) |
+| 복잡한 객체를 단계별로 생성 | Builder | [creational.md](../../docs/domain-design/patterns/design-patterns/creational.md#3-builder-패턴) |
+| 기존 객체에 기능 동적 추가 | Decorator | [structural.md](../../docs/domain-design/patterns/design-patterns/structural.md#2-decorator-패턴) |
+
 **상세**: [docs/domain-design/phases/02-design/](../../docs/domain-design/phases/02-design/)
 
 ## Phase 3: 구현
@@ -302,13 +316,14 @@ export class CreateOrderUseCase {
 
 ---
 
-## 핵심 원칙 (docs/domain-design/principles/)
+## 핵심 원칙 및 패턴
 
-| 원칙 | 참조 |
+| 분류 | 참조 |
 |------|------|
 | 객체지향 핵심 | [oop-fundamentals.md](../../docs/domain-design/principles/oop-fundamentals.md) |
 | SOLID | [solid.md](../../docs/domain-design/principles/solid.md) |
-| GRASP | [grasp-patterns.md](../../docs/domain-design/principles/grasp-patterns.md) |
+| **GRASP** | [**grasp.md**](../../docs/domain-design/patterns/grasp.md) |
+| **GoF 패턴** | [**design-patterns/**](../../docs/domain-design/patterns/design-patterns/index.md) |
 
 ---
 
