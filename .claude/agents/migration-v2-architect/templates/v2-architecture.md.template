@@ -1,0 +1,209 @@
+# v2 Architecture Specification: {{domainName}}
+
+## 1. Overview
+
+- **Domain:** {{domainName}}
+- **v1 Functions:** {{v1FunctionCount}}
+- **v2 Structure:**
+  - DTOs: {{dtoCount}}
+  - UseCases: {{usecaseCount}}
+  - Repository Methods: {{repositoryMethodCount}}
+  - Services: {{serviceCount}}
+
+## 2. DTO 설계
+
+### 2.1. {{DtoName}}
+
+**목적:** {{purpose}}
+
+**Zod 스키마:**
+```typescript
+export const {{DtoName}} = z.object({
+  {{field}}: {{zodType}},
+});
+
+export type {{DtoName}} = z.infer<typeof {{DtoName}}>;
+```
+
+**검증 규칙:**
+- {{field}}: {{validationRule}}
+
+**v1 매핑:**
+- v1 함수: `{{v1FunctionName}}`
+- v1 파라미터: `req.{{source}}.{{field}}`
+
+---
+
+## 3. UseCase 설계
+
+### 3.1. {{UseCaseName}} UseCase
+
+**파일:** `usecase/{{filename}}.usecase.ts`
+
+**클래스명:** `{{UseCaseName}}`
+
+**책임:** {{responsibility}}
+
+**Public 메서드:**
+```typescript
+async exec({
+  {{params}},
+  connection,
+}: {
+  {{paramTypes}};
+  connection?: Base.MySQL.Connection;
+}): Promise<{{returnType}}>
+```
+
+**Private 메서드:**
+- `{{privateMethod}}()`: {{description}}
+
+**Repository 의존성:**
+- `tc.{{repositoryName}}.{{method}}()` (import { tc } from '../repository')
+
+**v1 비즈니스 로직 매핑:**
+- {{v1Logic}} -> {{v2Implementation}}
+
+**복잡도:** {{complexity}} ({{estimatedHours}}시간)
+
+---
+
+### 3.2. usecase/index.ts 명세
+
+```typescript
+import { {{UseCaseName}} } from './{{filename}}.usecase';
+
+const query = {
+  {{queryUseCases}}
+};
+
+const command = {
+  {{commandUseCases}}
+};
+
+export default {
+  ...query,
+  ...command,
+};
+```
+
+---
+
+## 4. Repository 설계
+
+### 4.1. Repository 구조
+
+```
+repository/
+├── tc/
+│   ├── {{tableName}}.repository.ts
+│   └── index.ts
+└── index.ts
+```
+
+### 4.2. {{tableName}}.repository.ts 명세
+
+```typescript
+import database from '@databases';
+
+export default {
+  {{methodName}}: async ({
+    {{params}}
+  }: {
+    {{paramTypes}}
+  }) => {
+    const result = await repository.find*();
+    return result as {{returnType}};
+  },
+};
+```
+
+### 4.3. SP 매핑
+
+| Repository 메서드 | SP 이름 | 상태 |
+|---|---|---|
+| {{method}} | {{spName}} | 존재/SP_NOT_EXIST |
+
+---
+
+## 5. Service 설계
+
+### 5.1. {{serviceName}} Service
+
+**파일:** `service/{{filename}}.service.ts`
+
+**함수 시그니처:**
+```typescript
+import usecase from '../usecase';
+import { {{DtoName}} } from '../dto/{{filename}}.dto';
+
+export const {{serviceName}} = async (dto: {{DtoName}}): Promise<{{returnType}}> => {
+  return await usecase.{{usecaseName}}.exec(dto);
+};
+```
+
+**트랜잭션:** {{transactionRequired}}
+
+**Policy 적용:** {{policyRequired}}
+
+**v1 매핑:** `{{v1FunctionName}}`
+
+---
+
+## 6. 파일 구조
+
+```
+src/modules/domain_v2/{{domainName}}/
+├── dto/
+│   └── {{dtoFiles}}
+├── usecase/
+│   ├── {{usecaseFiles}}
+│   └── index.ts
+├── repository/
+│   ├── tc/
+│   │   ├── {{repositoryFiles}}
+│   │   └── index.ts
+│   └── index.ts
+├── service/
+│   ├── {{serviceFiles}}
+│   └── index.ts
+├── type/
+│   └── index.ts
+└── exception/
+    ├── {{exceptionFiles}}
+    └── index.ts
+```
+
+---
+
+## 7. Migration Notes
+
+### 주요 변경 사항
+
+1. **req/res 분리**
+   - v1: `req.query` 직접 접근
+   - v2: DTO.parse() 검증
+
+2. **메모리 필터링 제거**
+   - v1: DB 전체 조회 후 JavaScript 필터링
+   - v2: SP 파라미터로 전환 (성능 개선)
+
+3. **트랜잭션 추상화**
+   - v1: 수동 try-catch-finally
+   - v2: Service 계층에서 관리
+
+### 복잡도 분석
+
+| UseCase | 복잡도 | 예상 시간 | 이유 |
+|---|---|---|---|
+| {{UseCaseName}} | {{complexity}} | {{hours}}시간 | {{reason}} |
+
+**총 예상 시간:** {{totalHours}}시간
+
+---
+
+## 8. 다음 단계
+
+1. test-writer 에이전트: UseCase 테스트 작성
+2. migration-executor 에이전트: v2 코드 구현
+3. migration-validator 에이전트: 마이그레이션 검증
