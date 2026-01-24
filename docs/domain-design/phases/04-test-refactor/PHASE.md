@@ -201,3 +201,9 @@ class AmountDiscountPolicy implements DiscountPolicy { ... }
 - [ ] 조건문을 다형성으로 변경했는가?
 - [ ] 긴 메서드를 추출했는가?
 - [ ] 기존 기능이 유지되는가?
+
+---
+
+## 네비게이션
+
+← [이전: Phase 3 - 구현](../03-implementation/PHASE.md) | [다음: Phase 5 - 검증](../05-verification/PHASE.md) →

@@ -149,6 +149,8 @@ class Order {
 
 ### Tell, Don't Ask
 
+> 📚 **상세 가이드**: [Tell, Don't Ask 원칙](../../shared/tell-dont-ask.md)
+
 - 객체에게 "어떻게 하라"고 지시하지 말고
 - **"무엇을 하라"고 요청**하라
 
@@ -305,3 +307,10 @@ const order2 = new Order(items, new TieredDiscountPolicy());
 
 - 조영호, "오브젝트"
 - 조영호, "객체지향의 사실과 오해"
+
+---
+
+## 관련 문서
+
+- [GRASP 패턴](../patterns/grasp.md) - 책임 할당의 9가지 패턴
+- [SOLID 원칙](./solid.md) - 객체지향 설계 5대 원칙

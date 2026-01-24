@@ -32,7 +32,7 @@
 **대화형 리서치와 반복을 통한 상세한 구현 계획 수립**
 
 - 📄 **프롬프트 (한글)**: [`create-plan-ko.md`](./create-plan-ko.md)
-- 📄 **Prompt (English)**: [`create_plan.md`](./create_plan.md)
+- 📄 **Prompt (English)**: [`create-plan.md`](./create-plan.md)
 - 📋 **예제 (한글)**: [`create-plan-example-ko.md`](./create-plan-example-ko.md)
 - 📋 **Example (English)**: [`create-plan-example.md`](./create-plan-example.md)
 
@@ -163,6 +163,13 @@ git checkout main
 git worktree add ../feature-branch feature-name
 # 실제 코드 구현
 ```
+
+---
+
+## 🔗 관련 가이드
+
+- [객체지향 도메인 설계](../domain-design/README.md) - 설계 원칙과 패턴
+- [공유 가이드라인](../shared/) - 성공 기준, 하위 작업 등 공통 가이드
 
 ---
 

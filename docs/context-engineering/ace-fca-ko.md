@@ -394,3 +394,11 @@ Vaibhav는 여전히 회의적이었고, 저는 더 복잡한 문제를 해결�
 - 이 게시물의 초기 두서없는 버전을 들어준 모든 친구와 창업자들에게 감사합니다 - Adam, Josh, Andrew, 그리고 더 많은 분들
 - 이 이상한 폭풍을 견뎌준 Sundeep에게 감사합니다
 - 우리를 미래로 차며 비명을 지르며 끌고 간 Allison, Geoff, 그리고 Gerred에게 감사합니다
+
+---
+
+## 관련 문서
+
+- [Create Plan 프롬프트](./create-plan-ko.md) - 구현 계획 작성 프로세스
+- [Research Codebase 프롬프트](./research-codebase-ko.md) - 코드베이스 리서치 프로세스
+- [객체지향 도메인 설계](../domain-design/README.md) - 설계 원칙과 패턴

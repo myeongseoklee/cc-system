@@ -358,6 +358,8 @@ After structure approval:
    - Edge cases that are hard to automate
    - User acceptance criteria
 
+> 📚 **상세 가이드**: [성공 기준 작성 가이드라인](../shared/success-criteria-guidelines.md)
+
 **Format example:**
 ```markdown
 ### Success Criteria:
@@ -398,6 +400,8 @@ After structure approval:
 - Include migration strategy
 
 ## Sub-task Spawning Best Practices
+
+> 📚 **상세 가이드**: [하위 작업 모범 사례](../shared/subtask-best-practices.md)
 
 When spawning research sub-tasks:
 

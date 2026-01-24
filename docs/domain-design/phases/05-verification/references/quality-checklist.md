@@ -151,6 +151,6 @@
 
 ## 참고
 
-- [GRASP 패턴](../../../principles/grasp-patterns.md)
+- [GRASP 패턴](../../../patterns/grasp.md)
 - [SOLID 원칙](../../../principles/solid.md)
 - [안티패턴](./anti-patterns.md)

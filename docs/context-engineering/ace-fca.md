@@ -404,5 +404,13 @@ If you or someone you know is an engineering leader that wants to 10x their team
 ### Thanks
 
 - Thanks to all the friends and founders who've listened through early ramble-y versions of this post - Adam, Josh, Andrew, and many many more
-- Thanks Sundeep for weathering this wacky storm 
+- Thanks Sundeep for weathering this wacky storm
 - Thanks Allison, Geoff, and Gerred for dragging us kicking and screaming into the future
+
+---
+
+## Related Documents
+
+- [Create Plan Prompt](./create-plan.md) - Implementation planning process
+- [Research Codebase Prompt](./research-codebase.md) - Codebase research process
+- [Object-Oriented Domain Design](../domain-design/README.md) - Design principles and patterns

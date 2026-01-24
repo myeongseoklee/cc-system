@@ -126,4 +126,11 @@ docs/domain-design/
 
 ---
 
+## 관련 가이드
+
+- [Context Engineering](../context-engineering/README.md) - AI 코딩 에이전트 활용 가이드
+- [공유 가이드라인](../shared/) - 성공 기준, 하위 작업, Tell Don't Ask 등
+
+---
+
 **문서 버전:** 2.0

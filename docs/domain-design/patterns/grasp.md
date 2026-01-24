@@ -111,7 +111,7 @@ class OrderManager {
 
 ### 해결책 (Solution)
 
-**데이터와 행동을 함께 두라** (Tell, Don't Ask)
+**데이터와 행동을 함께 두라** ([Tell, Don't Ask](../../shared/tell-dont-ask.md))
 
 ```typescript
 // ❌ Ask: 데이터를 꺼내서 외부에서 계산 (Anemic Domain)

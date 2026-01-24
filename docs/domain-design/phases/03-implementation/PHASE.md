@@ -206,3 +206,9 @@ class OrderFactory {
 ## 관련 원칙
 
 - [객체지향 핵심](../../principles/oop-fundamentals.md) - 상태와 행동, 캡슐화
+
+---
+
+## 네비게이션
+
+← [이전: Phase 2 - 설계](../02-design/PHASE.md) | [다음: Phase 4 - 테스트/리팩토링](../04-test-refactor/PHASE.md) →

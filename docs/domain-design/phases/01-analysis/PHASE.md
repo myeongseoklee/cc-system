@@ -116,3 +116,9 @@ interface Messages {
 ## 관련 원칙
 
 - [객체지향 핵심](../../principles/oop-fundamentals.md) - 책임, 역할, 협력의 기본 개념
+
+---
+
+## 네비게이션
+
+[다음: Phase 2 - 설계](../02-design/PHASE.md) →
